@@ -99,8 +99,8 @@ async def webtoken_for_localhost(request):
     """
 
     # Establish that we can trust the client
-    if request.host not in ("localhost", "127.0.0.1"):
-        return 403, {}, "forbidden: must be on localhost"
+    if request.host not in ("localhost", "127.0.0.1", "timetagger.wallace-stock.co.uk"):
+        return 403, {}, "forbidden: must be on localhost or wallace-stock.co.uk"
 
     # Return the webtoken for the default user
     token = await get_webtoken_unsafe("defaultuser")
