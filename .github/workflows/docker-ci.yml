@@ -6,9 +6,9 @@ on:
       - 'main'
 
 jobs:
-  build-push:
+  docker-ci:
     runs-on: ubuntu-latest
-    environment: docker build
+    environment: docker-ci
     steps:
       -
         name: Set up QEMU
